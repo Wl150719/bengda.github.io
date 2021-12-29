@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png"/>
+    <script src="./js/jquery-3.1.0.min.js"></script>
+    <script src="./js/move.js"></script>
+    <script src="./js/addEvent.js"></script>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/hangbanxx.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css">
+    <title>航班信息</title>
+</head>
+<body>
+    <div class="head w">
+    <div class="head-left"></div>
+    <div class="head-center">
+    </div>
+    <div class="head-right">
+        <p><span class="icon-phone" style="color: orange;"></span> 全国客服电话</p>
+        <p>400-004-8888</p>
+        <div class="head-right-login">
+            <a href="login.html" class="head-right-login-a-1">请登录<span>|</span></a>
+            <a href="zc.html" class="head-right-login-a-2">免费注册</a>
+        </div>
+    </div>
+</div>
+
+<div class="banner">
+    <div class="banner-top">
+        <div class="banner-top-center w">
+            <ul class="clearfix" id="banner-top-center-ul">
+                <li class="permanent"><a href="./index.html">首页</a></li>
+                <li><a href="./route.html">精选路线</a></li>
+                <li><a href="./strategy.html">旅游攻略</a></li>
+                <li><a href="./travel-note.html">驴友游记</a></li>
+                <li class="banner-top-center-ul-li-5">
+                    <a href="#">关于我们</a>
+                    <div class="sub-menu" id="sub-menu-id">
+                        <div><a href="./present.html">公司介绍</a></div>
+                        <div><a href="./contact.html">联系我们</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="_layout">
+			<div class="jip_mian">
+				<section class="container">
+					<div class="top-box">
+						<div class="search-main .search-main-child">
+							<div class="search-div">
+								<div class="s-title dflex">
+									<span>国内机票</span>
+								</div>
+								<div class="s-sType">
+									<div class="at">
+										<label>
+											<input name="verb" type="radio" value="" checked='checked'/>单程
+										</label> 
+									</div>
+									<div class="at-two">
+										<label>
+											<input name="verb" type="radio" value="" />往返 
+										</label> 
+									</div>
+								</div>
+								<div class="s-style city-s-style">
+									<div class="s-box">
+										<p>出发城市<span>到达城市</span></p>
+										<div class="box-input">
+											<input class="input-left" id="cfd" type="text" name="become" value="上海"/>
+											<img src="images/hangban/jjip-logo1.jpg" />
+										    <input class="input-right" id="dz" type="text"  value="北京"/>
+										</div>
+										<p>出发日期<span>返回日期</span></p>
+										<div class="box-input">
+											<input class="input-left" id="cfsj" type="date" name="become"  value="年/月/日"/>	
+										    <input class="input-right" type="text" name="over" value="返回日期" />
+										</div>
+									</div>
+								</div>
+								<button class="s-button" onclick="start()">
+									<span>
+										搜索
+									</span>
+								</button>
+							</div>
+						</div>
+						<div class="new_center">
+							<div>
+								<a href="#" id="photo1" style="display:block;">
+									<img src="images/hangban/jip-lunbo1.jpg" style="width: 770px;height: 370px;"/>
+								</a>
+								<a href="javascript:;" id="photo2" style="display: none;">
+									<img src="images/hangban/jip-lunbo2.jpg" style="width: 770px;height: 370px;"/>
+								</a>
+								<a href="javascript:;" id="photo3" style="display: none;">
+									<img src="images/hangban/jip-lunbo3.jpg" style="width: 770px;height: 370px;"/>
+								</a>
+								<a href="javascript:;" id="photo4" style="display: none;">
+									<img src="images/hangban/jip-lunbo4.jpg" style="width: 770px;height: 370px;"/>
+								</a>
+							</div>
+							<div class="banner_menu">
+								<a href="javascript:;" id="banner_menu4"></a>
+								<a href="javascript:;" id="banner_menu3"></a>
+								<a href="javascript:;" id="banner_menu2"></a>
+								<a href="javascript:;" class="on" id="banner_menu1"></a>
+							</div>
+						</div>
+					</div>
+					<div class="comm-main dflex">
+						<h3 class="title">机票服务</h3>
+						<div class="serve-list dflex">
+							<a class="serve-ft" href="#" target="_blank">
+								<span>我的机票</span>
+							</a>
+							<div class="hxrz">
+								航协认证
+							</div>
+							<div class="cpks">
+								出票快速
+							</div>
+							<div class="yhxz">
+								3000万+的用户选择
+							</div>
+						</div>
+						<div class="serve-best dflex">
+							<a class="serve-str" href="#" target="_blank">
+								<span>飞行攻略</span>
+							</a>
+							<div class="thfx">
+								特惠放心
+							</div>
+							<div class="tgbj">
+								退改便捷
+							</div>
+							<div class="txfw">
+								7×24小时贴心服务
+							</div>
+						</div>
+					</div>
+				   
+		<div class="foot">
+		    <div class="foot-bottom">
+		        <div class="foot-bottom-one">
+		            <span></span>
+		        </div>
+		        <div class="foot-bottom-two">
+		            <p><span>Bengda</span> Design</p>
+		            <p>
+		                欢迎来到我们的网站，找到你喜欢的旅程！祝你有一个美好的旅途
+		            </p>
+		        </div>
+		        <div class="foot-bottom-three">
+		            <span></span>
+		        </div>
+		        <div class="foot-bottom-four">
+		            <p>
+		                <a href="#">首页</a>
+		                <a href="#">关于我们</a>
+		                <a href="#">联系我们</a>
+		            </p>
+		            <p>©2016 个人展示 版权所有</p>
+		            <p>
+		                <a href="#">手机版</a> |
+		                <a href="#">本站由蹦达建站搭建</a> |
+		                <a href="#">管理登录</a>
+		            </p>
+		        </div>
+		    </div>
+		</div>
+
+		<script>
+			//获取input元素
+			var _input = document.getElementById('cfsj');
+			//获取当前时间
+			var date = new Date();
+			var seperator = "-";
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var strDate = date.getDate();
+			if (month >= 1 && month <= 9) {
+			  month = "0" + month;
+			}
+			if (strDate >= 0 && strDate <= 9) {
+			  strDate = "0" + strDate;
+			}
+			//当前日期
+			var currentDate = year + seperator + month + seperator + strDate; 
+			//赋值给input.value
+			_input.value = currentDate;
+
+			//根据目的地显示航班信息图
+			function start(){
+					// console.log('点击成功');
+					var photo1 = document.getElementById("photo1");
+					var photo2 = document.getElementById("photo2");
+					var photo3 = document.getElementById("photo3");
+					var photo4 = document.getElementById("photo4");
+					var cfd = document.getElementById('cfd').value;
+					var dz = document.getElementById('dz').value;
+					console.log(dz);
+						if(dz == '北京'){
+							photo1.style.display="block";
+							photo2.style.display="none";
+							photo3.style.display="none";
+							photo4.style.display="none";
+							// console.log('北京成功');
+							return;
+						}
+						if(dz == '长沙'){
+							photo2.style.display="block";
+							photo1.style.display="none";
+							photo3.style.display="none";
+							photo4.style.display="none";
+							// console.log('长沙成功');
+							return;
+						}
+						if(dz == '西安'){
+							photo3.style.display="block";
+							photo2.style.display="none";
+							photo1.style.display="none";
+							photo4.style.display="none";
+							// console.log('西安成功');
+							return;
+						}
+						if(dz == '成都'){
+							photo4.style.display="block";
+							photo2.style.display="none";
+							photo3.style.display="none";
+							photo1.style.display="none";
+							// console.log('成都成功');
+							return;
+						}
+						if(dz == cfd){
+							alert('出发城市不能和到达城市相同！！');
+							return;
+						}
+						if(dz != '北京' && dz != '成都' && dz != '西安' && dz != '长沙'){
+							alert("还未开通，我们会尽快完善");
+						}
+			}
+		</script>
+		
+</body>
+</html>

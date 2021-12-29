@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蹦达旅游-注册</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.png"/>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <link rel="stylesheet" href="./css/register.css" type="text/css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css">
+</head>
+	<body>
+		<div class="w">
+    <div id="ww">
+        <div class="head w">
+            <a href="index.html"><div class="head-left"></div></a>
+            <div class="head-center">
+                <p><span>|</span>用户注册</p>
+            </div>
+            <div class="head-right">
+                <p><span class="icon-phone" style="color: orange;"></span> 全国客服电话</p>
+                <p>400-004-8888</p>
+            </div>
+        </div>
+        
+        
+        <div class="center w">
+            <div class="center-left">
+                <form action="#" method="post">
+                    <ul id="form-ul-id">
+                        <li>
+                            <label><span>*</span> 用户名 <input type="text" id="zusername"></label>
+                            <div style="color: red;" id="tishizUsername"></div>
+                        </li>
+                        <li>
+                            <label><span>*</span> 您的手机号 <input type="text" id="username"></label>
+                            <div style="color: red;" id="tishiUsername"></div>
+                        </li>
+                        <li class="yanzheng">
+                            <div id="verifyCodeDemo">
+						        <label><span>*</span> 图形验证码 <input type="text" id="code_input" placeholder="在这个框里输入验证码"></label>
+	                            <div class="yanzheng-pic"><p id="picyzm"></p></div>
+	                            <div style="color: red;display: inline-block;position: absolute;top:0;left: 410px;" id="thisyzm"></div>
+						    </div>
+                        </li>
+             
+                        <!-- <li class="yanzheng">
+                            <label><span>*</span> 手机验证码 <input type="text"></label>
+                            <div class="yanzheng-phone">获取验证码</div>
+                            <div>！请输入有效手机号</div>
+                            <div class="input-hint"><span class="icon-warning-sign"></span>请输入手机验证码</div>
+                        </li> -->
+                        <li>
+                            <label><span>&nbsp;*</span> 设置密码 <input type="text" id="pwd"></label>
+                            <div style="color: red;" id="tishiPwd"></div>
+                        </li>
+                        <li>
+                            <label>&nbsp;<span>*</span> 确认密码 <input type="text" id="repwd"></label>
+                            <div style="color: red;" id="tishiRepwd"></div>
+                            
+                        </li>
+                        
+                        <li class="protocol">
+                            <input class="kk" type="checkbox"> 我已阅读并接受 <a class="mystyle" href="#" onclick="show()">《蹦达用户注册协议和隐私政策》</a>
+                        </li>
+                    </ul>
+                    <div ><input id="zcbtn" type="button" onclick="checkUser()" value="同意服务条款并注册" ></div>
+                    <div class="direct-login">已经有账号, <a class="mystyle" href="./login.html">直接登录&gt;&gt;</a></div>
+                </form>
+        
+                <div class="other-login">
+                    <p>合作网站账号登录</p>
+                    <div class="other-login-web">
+                        <a href="#" class="qq"></a>
+                        <a href="#" class="weixin"></a>
+                        <a href="#" class="weibo"></a>
+                        <a href="#" class="zhifubao"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-right"></div>
+        </div>
+        
+        <div class="bottom">
+            <div class="service">
+                <ul>
+                    <li>
+                        <span class="service-one"></span>
+                        <p>
+                            <strong>价格保证</strong><br/>
+                            同类产品,保证低价
+                        </p>
+                    </li>
+                    <li>
+                        <span class="service-two"></span>
+                        <p>
+                            <strong>价格保证</strong><br/>
+                            同类产品,保证低价
+                        </p>
+                    </li>
+                    <li>
+                        <span class="service-three"></span>
+                        <p>
+                            <strong>价格保证</strong><br/>
+                            同类产品,保证低价
+                        </p>
+                    </li>
+                    <li>
+                        <span class="service-four"></span>
+                        <p>
+                            <strong>价格保证</strong><br/>
+                            同类产品,保证低价
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="other">
+                <div class="other-top">
+                    <a href="#">关于我们</a> |
+                    <a href="#">联系我们</a> |
+                    <a href="#">网站地图</a> |
+                    <a href="#">酒店品牌</a> |
+                    <a href="#">酒店查询</a> |
+                    <a href="#">帮助中心</a> |
+                    <a href="#">友情链接</a> |
+                    <a href="#">诚聘英才</a> |
+                    <a href="#">旅游度假资质</a> |
+                    <a href="#">意见反馈</a> |
+                    <a href="#">广告业务</a>
+                </div>
+                <div>
+                    Copyright © 2016 <a href="index.html">www.bengda.com</a> . 蹦达传播股份有限公司版权所有　沪ICP备1111111号-3　增值电信业务经营许可证编号：沪B2-20100030
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="twoBox" style="overflow-y:scroll;width: 730px;height: 500px;background-color: white;border:2px solid darkslategray;box-shadow: black 2px;">
+        <div class="twoBox_lever">
+            <div class="twoBox_lever_two">
+                <div class="two_title">
+                    <p style="font-size: 20px;border-bottom: black 1px solid;margin-bottom: 10px;padding-bottom: 5px;"><b>蹦达用户注册协议和隐私政策</b></p>
+                </div>
+                <form>
+                    <b>亲爱的用户，在您注册为蹦达用户的过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务必仔细阅读、充分理解协议中的条款内容后再点击同意，尤其是加粗字体。</b><br>
+                    <br>
+                    <a style="color: blue;font-weight: bold;">服务协议</a><br>
+                    <br>
+                    <ul id="fulist">
+                                <li>1.总则</li>
+                                <li>2.服务简介</li>
+                                <li>3.服务条款的修改</li>
+                                <li>4.服务变更、中断、终止</li>
+                                <li>5.使用规则</li>
+                                <li>6.版权声明</li>                                
+                                <li>7.用户隐私制度</li>
+                                <li>8.用户的账号、密码和安全性</li>                              
+                                <li>9.拒绝提供担保</li>
+                                <li>10.有限责任</li>                               
+                                <li>11.携程网络会员服务信息的存储及限制</li>
+                                <li>12.用户管理</li>                            
+                                <li>13.用户的违约责任</li>
+                                <li>14.保障</li>                                
+                                <li>15.结束服务</li>
+                                <li>16.通告 </li>                               
+                                <li>17.参与广告策划</li>
+                                <li>18.邮件内容的所有权</li>
+                                <li> 19.法律</li>
+                    </ul>          
+                    <br>
+                    <br>
+                    <a style="color: blue;font-weight: bold;">隐私政策</a><br>
+                    <br>
+                    <b>隐私政策明确了我们产品与/或服务所收集、使用及共享个人信息的类型和方式及用途；明确了用户查询、更正和删除个人信息的方式，</b>具体提纲如下：<br><br>
+                    <ul id="fulist">
+                        <li>1.隐私政策的确认和接纳 </li>
+                        <li>2.信息收集</li><li>3.信息使用 </li>
+                        <li>4.信息共享、转让和披露</li>
+                        <li>5.信息保存及跨境传输</li>
+                        <li>6.Cookie的使用</li>
+                        <li>7.个人敏感信息提示</li>
+                        <li>8.信息安全与保护</li>
+                        <li>9.信息安全事件处置</li>
+                        <li>10.未成年人信息保护</li>
+                        <li>11.用户个人信息管理</li>
+                        <li>12.从中国大陆地区以外访问我们的网站</li>
+                        <li>13.隐私政策的适用范围</li>
+                        <li>14.隐私政策的修改</li>
+                        <li>15.法律</li>
+                     </ul> 
+                    <br>
+                    <br>
+                    【审慎阅读】您在申请注册流程中点击同意前，请您务必审慎阅读、充分理解协议中相关条款内容，尤其是与您约定免除或限制责任的条款，以及字体加粗标识的重要条款。<br>
+                    <br>
+                    <b>【请您注意】如果您不同意上述协议或其中任何条款约定，请您停止注册。如果您按照注册流程提示填写信息、阅读并点击同意上述协议且完成全部注册流程后，即表示您已充分阅读、理解并接受协议的全部内容。</b>如果您对以上内容有疑问，请联系：wj_webdome@163.com。<br>
+                    <br>
+                    点击同意即代表您已阅读并同意蹦达《服务协议》和《隐私政策》，并同意我们将您的订单信息共享给为完成此订单所必须的第三方合作方。
+                </form>
+                <div class="two_footer">
+                    <button style="margin-right: 300px;background-color: white;font-size: 20px;margin-left: 100px;" onclick="LoggerFactory()">不同意</button>
+                    <button style="font-size: 20px;background-color: orange;" onclick="hide()">同意并继续</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 创建cookie -->
+<script src="js/cookie.js"></script>
+<!-- 随机生成验证码 -->
+<script type="text/javascript" src="js/sj.js"></script>
+<script>
+    //移除类hide 页面透明度0.3
+    function show(){
+        document.getElementById("twoBox").classList.remove("hide");
+        document.getElementById('ww').style.opacity='0.3';
+    }
+    function LoggerFactory(){
+        window.location.href="index.html";
+    }
+    // 移除类show，再增加类hide
+    function hide(){
+        document.getElementById("twoBox").classList.add("hide");
+        document.getElementById('ww').style.opacity='1';
+    }
+	
+	var zusername = document.querySelector('#zusername');
+	var pwd = document.querySelector('#pwd');
+	var zcbtn = document.querySelector('#zcbtn');
+						    
+	// zcbtn.onclick = function(){
+	// 	if(getCookie(zusername.value)){
+	// 		alert('用户名已存在');
+	// 		zusername.value = pwd.value = '';
+	// 	}else{
+	// 		createCookie(zusername.value,pwd.value,30);
+	// 		alert('注册成功!跳转至登录页面?');
+	// 		location.href = "denglu.html";
+	// 	}
+	// };
+	var verifyCode = new GVerify({
+        id : "picyzm",
+		type : "blend"
+	});
+                    
+    function checkUser(){
+                //验证用户名
+                //4到16位（字母，数字，下划线，减号）
+                var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;
+                var zusername = document.getElementById("zusername").value;//文本框中的值
+				if(zusername == ""){
+					document.getElementById("tishizUsername").innerHTML ="！请输入用户名";
+					return;
+				}else if(!uPattern.test(zusername)){
+					document.getElementById("tishizUsername").innerHTML ="！用户名为4到16位（包含字母，数字，下划线，减号）";
+					return;
+				}else{
+					document.getElementById("tishizUsername").innerHTML ="";
+				}
+
+                // 验证手机号 
+				var username = document.getElementById("username").value;//文本框中的值
+				if(username == ""){
+					document.getElementById("tishiUsername").innerHTML ="！请输入手机号";
+					return;
+				}else{
+					document.getElementById("tishiUsername").innerHTML ="";
+                    // 正确格式为：1开头 第二位3.4.5.7.8 后面九位0-9随机
+					var Mobile = /^[1][3,4,5,7,8][0-9]{9}$/;
+					if(!Mobile.test(username)){
+						document.getElementById("tishiUsername").innerHTML ="!请输入正确的手机号";
+						return;
+					}else{
+                        document.getElementById("tishiUsername").innerHTML ="";
+                    }
+				}
+
+                //验证验证码     
+				var btnn = document.getElementById("zcbtn");
+					        	var code = document.getElementById("code_input");
+					            var res = verifyCode.validate(code.value);
+				if(res){
+				    document.getElementById("thisyzm").innerHTML ="";
+				}else{
+					document.getElementById("thisyzm").innerHTML ="！请输入正确输入验证码";
+					return;
+				}
+
+				//验证密码
+				var pwd = document.getElementById("pwd").value;
+				if(pwd == ""){
+					document.getElementById("tishiPwd").innerHTML ="!密码不能为空";
+					return;
+				}else{
+					document.getElementById("tishiPwd").innerHTML ="";
+					var reg = /^[0-9]{6}$/;
+					if(!reg.test(pwd)){
+						document.getElementById("tishiPwd").innerHTML ="!密码只能为6位数字";
+						return;
+					}else{
+                        document.getElementById("tishiPwd").innerHTML ="";
+                    }
+				}
+
+				//验证第二次密码
+				var repwd = document.getElementById("repwd").value;
+				if(repwd == ''){
+                    document.getElementById("tishiRepwd").innerHTML ="！密码不能为空";
+                    return;
+                }else if(pwd != repwd){
+					document.getElementById("tishiRepwd").innerHTML ="！两次密码不一致";
+                    return;
+				}else{
+                        document.getElementById("tishiRepwd").innerHTML ="";
+                    }
+
+                //验证是否已经勾选
+                var kk= document.querySelector('.kk');
+                if(kk.checked == false){//判断checked    
+                    alert('请勾选我已阅读并接受');
+                    return;
+                }
+				//查询cookie数据
+            	if(getCookie(zusername)){
+                    //alert('用户名已存在');
+                    document.getElementById("tishizUsername").innerHTML ="！用户名已存在";
+                    zusername = pwd = '';
+                    return;
+		        }else{
+		        	//无重复用户名，就存储进cookie
+			        createCookie(zusername,pwd,30);
+			        //alert('注册成功!跳转至登录页面?');
+			        location.href = "login.html";
+		        }
+				//window.open('index.html');
+                //全部通过则跳转至链接
+                window.location.href="login.html";
+			}
+            
+            //按下回车键回调表单函数进行验证
+            document.onkeydown=function(){
+                if (event.keyCode == 13){
+                    checkUser();
+            }
+          }
+</script>
+	</body>
+</html>
