@@ -1,0 +1,245 @@
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,p,form{margin:0}
+body,button,input,select,textarea{font:12px/1.5 tahoma,'\5b8b\4f53',sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+em,b,i{font-style:normal;}
+a{text-decoration:none; cursor: pointer;}
+a:hover{text-decoration:none;}
+img{border:0;display:block; cursor: pointer;}
+label{cursor: pointer;}
+button,input,select,textarea{font-size:100%;outline:none}
+table{border-collapse:collapse;border-spacing:0}
+td,th,ul,ol,li{padding:0;list-style-type:none; cursor: pointer;}
+body{font-family: "微软雅黑";}
+.clear:after{content:"";display:block;height:0;line-height:0;visibility:hidden;clear:both;}
+.clear{*zoom:1;}
+.mid{margin: 0 auto; width: 1200px;}
+
+/*头部样式（导航条banner图区域）*/
+/*小标题*/
+.btl_box{
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+.btl_box .bottomxx{
+	position: relative;
+	width: 1200px;
+	border-bottom: 3px solid #009424;
+}
+.btl_box .bottomxx h4{
+	font-weight: bold;
+	font-size: 2em;
+	margin-bottom: 15px;
+}
+.btl_box .bottomxx p{
+	display: inline-block;
+	font-size: 2.4em;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #009424;
+}
+.btl_box .bottomxx span{
+	position: absolute;
+	font-size: 1.2em;
+	right: 0;
+	margin-top: 15px;
+}
+/*小标题*/
+/*攻略栏目一*/
+.gllm1{
+    width:1200px;
+    height: 1300px;
+    margin:30px auto;
+}
+.gllm1 ul li{
+   	list-style: none;
+    display: inline-block;          
+}
+.gllm1 ul{
+    position:relative;
+}
+.gllm1 input{
+    display:none;
+}
+.gllm1 input+label{
+    display:block;
+    font-size:1.6em;
+    line-height: 50px;
+    margin-right: 25px;
+    margin-left: 10px;
+}
+.gllm1 input+label+div{
+    display:none;
+    position: absolute;
+    left:0;
+    top:60px;
+}
+.gllm1 input:checked+label{
+    color:#009424;
+}
+.gllm1 input:checked+label+div{
+    display:block;
+}
+.gllm1 ul li .fyspq{
+    overflow: hidden;
+}
+.gllm1 ul li .fyspq img{
+    width: 284px;
+    height: 286px;
+    border-radius: 6px;
+}
+.gllm1 ul li .fyspq .lb_sp .ln_clo{
+    color: #009424;
+    font-size: 1.6em;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.gllm1 ul li .fyspq .lb_sp .ln_wzc{
+    font-size: 1.3em;
+    line-height: 25px;
+}
+.gllm1 ul li .fyspq .lb_sp{
+    width: 290px;
+    float: left;
+    margin-left: 9px;
+    margin-bottom: 40px;
+}
+/*攻略栏目一*/
+/*攻略栏目二*/
+.wrap {
+	margin: 50px auto;
+	width: 1200px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+}
+
+.pic {
+	width: 700px;
+	height: 304px;
+	cursor: pointer;
+}
+
+.pic1 {
+	background: url('../images/gllm2-1.jpg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.pic2 {
+	background: url('../images/gllm2-2.jpg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 500px;
+	z-index: 3;
+}
+.pic3 {
+	background: url('../images/gllm2-3.jpg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 600px;
+	z-index: 5;
+}
+.pic4 {
+	background: url('../images/gllm2-4.jpg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 700px;
+	z-index: 7;
+}
+.pic5 {
+	background: url('../images/gllm2-5.jpg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 800px;
+	z-index: 9;
+}
+.pic6 {
+	background: url('../images/gllm2-6.jpg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 900px;
+	z-index: 11;
+}
+/*攻略栏目二*/
+/*攻略栏目三*/
+.last_yj{
+	overflow: hidden;
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+.last_yj .yj_box{
+	float: left;
+	width: 373px;
+	height: 340px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	position: relative;
+}
+.last_yj .yj_box .yjlb_top{
+	font-size: 1.3em;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.last_yj .yj_box .yjlb_bottom{
+	line-height: 25px;
+	font-size: 1.15em;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.last_yj .yj_box .yjlb_left{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: #009424;
+}
+.last_yj .yj_box .yjlb_right{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+/*攻略栏目三*/
+/*版权*/
+.banqun{
+	width: 1903px;
+	height: 300px;
+	margin: 0 auto;
+	background: #282828;
+}
+.banqun .banquntop .ydq1{
+	margin: 50px 118px 50px 118px;
+	display: inline-block;
+}
+.banqun .banquntop .ydq1 h6{
+	color: white;
+	font-size: 1.6em;
+}
+.banqun .banquntop .ydq1 ul{
+	width: 160px;
+	overflow: hidden;
+}
+.banqun .banquntop .ydq1 ul .r30{
+	margin-right: 30px;
+}
+.banqun .banquntop .ydq1 ul li{
+	font-size: 0.8em;
+	color: whitesmoke;
+	float: left;
+	line-height: 30px;
+}
+.banqun .banqunbottom{
+	position: relative;
+	margin-top: 20px;
+}
+.banqun .banqunbottom p{
+	font-size: 1.2em;
+	text-align: center;
+	color: whitesmoke;
+}
+/*版权*/

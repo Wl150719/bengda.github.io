@@ -1,0 +1,512 @@
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,p,form{margin:0}
+body,button,input,select,textarea{font:12px/1.5 tahoma,'\5b8b\4f53',sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+em,b,i{font-style:normal;}
+a{text-decoration:none; cursor: pointer;}
+a:hover{text-decoration:none;}
+img{border:0;display:block; cursor: pointer;}
+label{cursor: pointer;}
+button,input,select,textarea{font-size:100%;outline:none}
+table{border-collapse:collapse;border-spacing:0}
+td,th,ul,ol,li{padding:0;list-style-type:none; cursor: pointer;}
+body{font-family: "微软雅黑";}
+.clear:after{content:"";display:block;height:0;line-height:0;visibility:hidden;clear:both;}
+.clear{*zoom:1;}
+.mid{margin: 0 auto; width: 1200px;}
+
+
+.show_list{
+    position: relative;
+}
+.show_list .move_list{
+    display: none;
+    z-index: 103;
+    position: absolute;
+    top: -35px;
+    left: 4px;
+    background: #333;
+    text-align: center;
+}
+.show_list .move_list li{
+	padding:15px 10px 15px 10px;
+	width: 100px;
+    color: #fff;
+    font-size: 13px;
+}
+.show_list .move_list li a{
+	color: white;
+}
+.show_list:hover .move_list{
+    display: block;
+}
+.show_list .move_list li:hover{
+    color: white;
+    background: #009424;
+}
+.head_lbt{
+	position: relative;
+	height: 640px;
+}
+*{
+	margin: 0;
+    padding: 0;
+}
+head {
+    display: none;
+}
+div{
+	display: block;
+}
+body {
+    color: #333;
+    font: normal normal normal 12px/20px Arial,sans-serif;
+}
+a {
+    color: #005bb5;
+    text-decoration: none;
+    outline: 0;
+}
+.container {
+    min-height: 100vh;
+    margin-top: 10px;
+}
+section {
+    display: block;
+}
+.top-box {
+    position: relative;
+    height: 370px;
+    width: 1190px;
+    margin: auto;
+    display: flex;
+}
+.top-box .search-main {
+    margin-right: 20px;
+}
+.search-div {
+    width: 410px;
+    height: 370px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #666;
+    box-sizing: border-box;
+    border: 1px solid #e2e7e5;
+}
+.search-div .s-title {
+    height: 48px;
+    background-color: #e2e7e5;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 48px;
+    padding-left: 52px;
+    position: relative;
+    justify-content: space-between;
+}
+.search-div>div {
+    padding: 0 20px;
+}
+.dflex {
+    display: flex;
+}
+.search-div .s-title:before {
+    position: absolute;
+    content: "";
+    top: 12px;
+    left: 20px;
+    width: 22px;
+    height: 22px;
+    background: url(../images//jip-logo.png) 0 0 no-repeat;
+}
+.search-div .s-sType {
+    display: flex;
+    font-size: 16px;
+    padding: 20px 0 10px 20px;
+}
+.search-div .s-sType .at {
+    color: #333;
+}
+.search-div .s-sType>div {
+    padding-left: 24px;
+    width: 74px;
+    position: relative;
+    cursor: pointer;
+}
+.s-sType .at {
+	left: -20px;
+}
+
+.top-box .search-main.search-main-child .city-s-style {
+    margin-bottom: 6px;
+}
+.search-div .s-style {
+    display: flex;
+    margin-bottom: 20px;
+}
+.search-div>div {
+    padding: 0 20px;
+}
+.search-div .s-style .s-box {
+    line-height: 32px;
+    position: relative;
+}
+.search-div .s-style .s-box p{
+	color: #000000;
+}
+.search-div .s-style .s-box p span{
+	position: absolute;
+	left: 200px;
+}
+.search-div .s-style .s-box .box-input{
+	position: relative;
+	padding-bottom: 20px;
+}
+.search-div .s-style .s-box .box-input input{
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    width: 150px;
+    height: 30px;
+    border-radius: 2px;
+    color: #B6B6B6;
+}
+.search-div .s-style .s-box .box-input .input-right{
+	margin-left: 35px;
+}
+input{
+	vertical-align: middle;
+    font-size: 100%;
+    outline: 0;
+    font-family: 'Microsoft YaHei',Arial,sans-serif;
+}
+.search-div .s-style .s-box .box-input img{
+	position: absolute;
+    content: "";
+    width: 26px;
+    height: 26px;
+    top: 5px;
+    left: 157px;
+    background-size: 100%;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.top-box .search-main.search-main-child .s-button {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.search-div .s-button {
+    display: block;
+    margin: 30px 20px;
+    background-color: #ff5346;
+    height: 48px;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    width: 370px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.search-div button {
+    color: #fff;
+    border-radius: .3rem;
+    transition: all .25s ease;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+}
+.search-div .s-button>span {
+    position: relative;
+    padding-left: 30px;
+}
+.search-div .s-button>span:before {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    content: "";
+    background: url(../images/jip-logo2.png) no-repeat;
+    background-size: 22px;
+}
+.new_center{
+	width: 100%;
+	height: 370px;
+    float: left;
+    position: relative;
+}
+.new_center a img{
+	width: 770px;
+	height: 370px;
+}
+.new_center span{
+	width: 100%;
+	height: 36px;
+	background: url(../images/bgpopup.png);
+	font-size: 14px;
+	color: #fabb16;
+	text-align: center;
+	line-height: 36px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.new_center .banner_menu{
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	right: 15px;
+	top: 320px;
+}
+.new_center .banner_menu a{
+	width: 15px;
+	height: 18px;
+	background: url(../images/newsdot_n.png) no-repeat;
+	float: right;
+	margin-left:10px;
+}
+.new_center .banner_menu a.on{
+	background: url(../images/newsdot_s.png) no-repeat top;
+}
+.new_center .banner_menu a:hover{
+	background: url(../images/newsdot_s.png) no-repeat top;
+}
+.comm-main {
+    width: 1190px;
+    margin: 10px auto 20px;
+    position: relative;
+}
+.comm-main h3.title {
+    font-weight: 700;
+    font-size: 28px;
+    height: 60px;
+    line-height: 60px;
+}
+.serve-list {
+    margin:65px 0 0 -110px;
+    float: left;
+}
+.serve-list .serve-ft {
+    width: 200px;
+    height: 128px;
+    line-height: 128px;
+    background: linear-gradient(90deg,#00bf63,#01c192);
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 50px;
+    text-align: right;
+    position: relative;
+}
+.serve-list>a>span{
+	float: left;
+	margin-left: 100px;
+}
+.serve-list>a.serve-ft:before, .flight-serve .serve-list>a.serve-str:before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    top: 34px;
+    left: 28px;
+    background: url(../images/jip-logo3.png) no-repeat;
+    background-size: 100% 100%;
+}
+.comm-main .serve-list>div {
+    width: 225px;
+    font-size: 14px;
+    color: #666;
+    height: 50px;
+    line-height: 20px;
+    padding: 15px 0 10px 70px;
+    position: relative;
+    margin-top: 45px;
+    margin-left: 30px;
+    box-sizing: border-box;
+}
+.comm-main .serve-best>div {
+    width: 225px;
+    font-size: 14px;
+    color: #666;
+    height: 50px;
+    line-height: 20px;
+    padding: 15px 0 10px 70px;
+    position: relative;
+    margin-top: 45px;
+    margin-left: 30px;
+    box-sizing: border-box;
+}
+.comm-main .serve-list>div.hxrz:before {
+    background: url(../images/jip-logo5.png) ;
+    height: 100%;
+}
+.comm-main .serve-list>div.yhxz:before {
+    background: url(../images/jip-logo6.png) ;
+    height: 100%;
+}
+.comm-main .serve-list>div.cpks:before {
+    background: url(../images/jip-logo7.png) ;
+    height: 100%;
+}
+.comm-main .serve-best>div.thfx:before {
+    background: url(../images/jip-logo8.png) ;
+    height: 100%;
+}
+.comm-main .serve-best>div.tgbj:before {
+	background: url(../images/jip-logo8.png);
+    height: 100%;
+}
+.comm-main .serve-best>div.txfw:before {
+    background: url(../images/jip-logo10.png) ;
+    height: 100%;
+}
+.comm-main .serve-list>div:before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+}
+.comm-main .serve-best>div:before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+}
+.serve-best{
+	position: absolute;
+	margin: 250px 0 0 2px;
+	
+}
+.serve-best .serve-str {
+    width: 200px;
+    height: 128px;
+    line-height: 128px;
+    background: linear-gradient(90deg,#00bf63,#01c192);
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 50px;
+    text-align: right;
+    position: relative;
+}
+.serve-best>a.serve-str:before{
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    top: 34px;
+    left: 28px;
+    background: url(../images/jip-logo4.png) no-repeat;
+    background-size: 100% 100%;
+}
+.serve-best>a.serve-str span{
+	float: left;
+	margin-left: 100px;
+}
+.comm-main-s {
+    width: 1190px;
+    margin: 200px auto 0;
+    position: relative;
+}
+.comm-main-s h3 {
+    font-weight: 700;
+    font-size: 28px;
+    height: 60px;
+    line-height: 60px;
+}
+.tab_box .jip-title{
+	margin-left: -20px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0 10px 10px 0;
+}
+.tab_box{
+	height: 300px;
+}
+.tab_box .jip-title ul li{
+	display: inline-block;
+	margin-right: 10px;
+    padding: 0 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.tab_box .jip-title ul .on{
+	background-color: #00c77b;
+    color: #fff;
+    border: 1px solid #00a969;
+    border-radius: 2px;
+    position: relative;
+}
+.jip-title ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    list-style: none;
+}
+.cont{
+	display: inline;
+	width: 1190px;
+	float: left;
+	font-size: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 0 20px;
+    height: 240px;
+}
+.cont:before{
+	position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 397px;
+    background-color: #e4e4e4;
+    content: "";
+}
+.cont .list-sty:before{
+	position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 790px;
+    background-color: #e4e4e4;
+    content: "";
+}
+.cont .list-sty {
+	float: left;
+    height: 40px;
+    width: 360px;
+    line-height: 20px;
+    color: #333;
+    padding: 9px 0 9px 15px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    display: flex;
+    margin: 0 18px;
+    border-radius: 2px;
+}
+.cont .list-sty .address {
+    width: 172px;
+}
+.cont .list-sty  .date {
+    width: 120px;
+}
+.cont .list-sty  .price {
+    color: #f60;
+    text-align: right;
+    width: 45px;
+    padding-right: 15px;
+}
+
