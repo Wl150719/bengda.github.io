@@ -57,91 +57,51 @@
         <a href="./write-note.html" class="write-note">我要写游记</a>
     </div>
 
-    <div class="story-items">
-
-        <div class="story-item">
+    <div class="story-items" id="ddd">
+        <div class="story-item" v-for='b in mydata'>
             <div class="story-item-left">
                 <a href="#">
-                    <img src="./images/travel-note/story-1.jpg" alt="">
+                    <img v-bind:src="b.pic_url" alt="">
                 </a>
             </div>
             <div class="story-item-center">
                 <h3>
-                    <a href="#">巴厘岛：巴厘岛 | 总有一个假日，要属于bali</a>
+                    <a href="#">{{b.title}}</a>
                 </h3>
                 <p>
-                    是没想到，提笔写此篇 巴厘岛 之行的回忆时，是此番境况。19年时久居龙目岛，想要去 巴厘岛 只需买一张100多块钱的机票，不到一个小时便可抵达那个热闹的小岛。
+                    {{b.price}}
                 </p>
-                <div>[游记]</div>
+                <div>{{b.author}}</div>
             </div>
             <div class="story-item-right">
-                <p>2021-08-18</p>
-            </div>
-        </div>
-
-
-        <div class="story-item">
-            <div class="story-item-left">
-                <a href="#">
-                    <img src="./images/travel-note/story-2.jpg" alt="">
-                </a>
-            </div>
-            <div class="story-item-center">
-                <h3>
-                    <a href="#">沙巴：马来西亚｜惬意在槟城，纵身一跃仙本那</a>
-                </h3>
-                <p>
-                   “马来西亚是我一直很想要去的地方，想去沙巴潜水，想去热浪岛回味年少时的夏日么么茶，想去槟城与斑斓的壁画融为一体，想去仙本那看看这个被称做世界上最后的伊甸园......”
-                </p>
-                <div>[游记]</div>
-            </div>
-            <div class="story-item-right">
-                <p>2021-09-15</p>
-            </div>
-        </div>
-
-
-        <div class="story-item">
-            <div class="story-item-left">
-                <a href="#">
-                    <img src="./images/travel-note/story-3.jpg" alt="">
-                </a>
-            </div>
-            <div class="story-item-center">
-                <h3>
-                    <a href="#">重庆：重庆森林，一部现实与梦境交织的电影</a>
-                </h3>
-                <p>
-                    2020年的疫情让去年在路上的日子变得无比艰难错过了 韩国 的樱花错过了期盼已久的毕业旅行……
-                </p>
-                <div>[游记]</div>
-            </div>
-            <div class="story-item-right">
-                <p>2021-10-08</p>
-            </div>
-        </div>
-
-
-        <div class="story-item">
-            <div class="story-item-left">
-                <a href="#">
-                    <img src="./images/travel-note/story-4.jpg" alt="">
-                </a>
-            </div>
-            <div class="story-item-center">
-                <h3>
-                    <a href="#">海南：隔壁老王环游中国第二季：房车自驾海南，2021的冬天和爸妈一起冲浪跨年</a>
-                </h3>
-                <p>
-                    Hi大家，我们是正在开着房车环游中国 ，跟祖国大好河山做邻居的隔壁老王一家～或许你是第一次知道我们，那我就代表我们一家三口先来做个自我介绍吧。
-                </p>
-                <div>[游记]</div>
-            </div>
-            <div class="story-item-right">
-                <p>2021-12-08</p>
+                <p>{{b.number}}</p>
             </div>
         </div>
     </div>
+
+    <script src="js/vue.min.js"></script>
+    <script>
+        let mydata;
+            $(document).ready(function () {
+              $.ajax({
+                url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Travels",
+                method: "post",
+                dataType: "json",
+                success: function (data) {
+                  if (data) {
+                    mydata = data.body.Travellist;
+                    new Vue({
+                      el: "#ddd",
+                      data: {
+                        mydata: data.body.Travellist,
+                      },
+                    });
+                  }
+                },
+                error: function () {},
+              });
+            });
+    </script>
 
     <div class="story-page" id="story-page-id">
         <i class="story-page-pre">上一页</i>
@@ -182,7 +142,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
     window.onload = function (e) {
