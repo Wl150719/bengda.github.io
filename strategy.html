@@ -60,199 +60,107 @@
     <ul>
         <li>
             <input type="radio" name="cheg" id="catvi1" checked><label for="catvi1">房源</label>
-            <div class="fyspq">
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm1.jpg" />
-            		<p class="ln_clo">温州</p>
-            		<p class="ln_wzc">春天在雁荡山在北方的海边度过了冬季两个月，一直在想春天去哪里生活</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm2.jpg" />
-            		<p class="ln_clo">重庆</p>
-            		<p class="ln_wzc">在重庆的半山腰发现了陶渊明式的“桃花源记”</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm3.jpg" />
-            		<p class="ln_clo">上海</p>
-            		<p class="ln_wzc">魔都民宿 晚安请梦到我一直住在上海的我想更好的感受这座城市</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm1.jpg" />
-            		<p class="ln_clo">暹粒</p>
-            		<p class="ln_wzc">住在小路拐角处的小旅馆，溢满度懒人假风</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm4.jpg" />
-            		<p class="ln_clo">杭州</p>
-            		<p class="ln_wzc">雨雾中的杭州，遇见绿袖民宿</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm5.jpg" />
-            		<p class="ln_clo">巴塞罗那</p>
-            		<p class="ln_wzc">电影中的贵族世界人生的一次最棒的居住体验！</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm6.jpg" />
-            		<p class="ln_clo">格莱诺基</p>
-            		<p class="ln_wzc">隐藏在格兰诺奇的山中宝石</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm7.jpg" />
-            		<p class="ln_clo">厦门</p>
-            		<p class="ln_wzc">入住海边别墅、名仕御园春节临时说走就走的旅行</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm9.jpg" />
-            		<p class="ln_clo">维也纳</p>
-            		<p class="ln_wzc">掉进电影里的维也纳大别墅</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm7.jpg" />
-            		<p class="ln_clo">扬州</p>
-            		<p class="ln_wzc">一间唐风古韵的田园民宿邻近扬州江都宫的唐子城民宿</p>
-            	</div>
-            	<div class="lb_sp">
-            		<img src="images/strategy/gllm8.jpg" />
-            		<p class="ln_clo">广州</p>
-            		<p class="ln_wzc">一早起来还能沿着恩宁路徒步走过去荔枝湾，一边走一边吃各种小吃</p>
-            	</div>
-             	<div class="lb_sp">
-            		<img src="images/strategy/gllm5.jpg" />
-            		<p class="ln_clo">悉尼</p>
-            		<p class="ln_wzc">一不小心住进澳大利亚剧组拍摄热门场景地</p>
+            <div class="fyspq" id="fff">
+            	<div class="lb_sp" v-for='v in mydata'>
+            		<img v-bind:src="v.pic_url" />
+            		<p class="ln_clo">{{v.title}}</p>
+            		<p class="ln_wzc">{{v.price}}</p>
             	</div>
             </div>
         </li>
+
+		<script src="js/vue.min.js"></script>
+			<script>
+				let mydata;
+			    $(document).ready(function () {
+			      $.ajax({
+			        url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Lntroduction",
+			        method: "post",
+			        dataType: "json",
+			        success: function (data) {
+			          if (data) {
+			            mydata = data.body.Listing;
+			            new Vue({
+			              el: "#fff",
+			              data: {
+			                mydata: data.body.Listing,
+			              },
+			            });
+			          }
+			        },
+			        error: function () {},
+			      });
+			    });
+			</script>
+
         <li>
             <input type="radio" name="cheg" id="catvi2"><label for="catvi2">景点</label>
-            <div class="fyspq">
-             	<div class="lb_sp">
-              		<img src="images/strategy/gllm11.jpg" />
-               		<p class="ln_clo">西双版纳傣族自治州</p>
-               		<p class="ln_wzc">西双版纳之美</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm22.jpg" />
-               		<p class="ln_clo">镰仓</p>
-               		<p class="ln_wzc">日本镰仓两日旅行+美食攻略</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm33.jpg" />
-               		<p class="ln_clo">苏州</p>
-               		<p class="ln_wzc">上有天堂 下有蘇杭</p>
-               	</div>
-               	<div class="lb_sp">
-              		<img src="images/strategy/gllm44.jpg" />
-               		<p class="ln_clo">上海</p>
-               		<p class="ln_wzc">上海之行</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm55.jpg" />
-               		<p class="ln_clo">京都</p>
-               		<p class="ln_wzc">Kyoto | 红叶季后的宁静</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm66.jpg" />
-               		<p class="ln_clo">重庆</p>
-               		<p class="ln_wzc">大话万州瀑布，寻找一生所爱</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm77.jpg" />
-               		<p class="ln_clo">伦敦</p>
-               		<p class="ln_wzc">Trip to Edinburgh</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm66.jpg" />
-               		<p class="ln_clo">万宁</p>
-               		<p class="ln_wzc">在南国海岸吸一个金椰</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm55.jpg" />
-               		<p class="ln_clo">台北</p>
-               		<p class="ln_wzc">我心飞扬</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm44.jpg" />
-               		<p class="ln_clo">大兴安岭</p>
-               		<p class="ln_wzc">地区逍遥游——漠河</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm33.jpg" />
-               		<p class="ln_clo">昆明</p>
-               		<p class="ln_wzc">昆明，日照西斜</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm22.jpg" />
-               		<p class="ln_clo">珠海</p>
-               		<p class="ln_wzc">珠海周末游</p>
-               	</div>
+            <div class="fyspq" id="aaa">
+            	<div class="lb_sp" v-for='a in mydata1'>
+            		<img v-bind:src="a.pic_url" />
+            		<p class="ln_clo">{{a.title}}</p>
+            		<p class="ln_wzc">{{a.price}}</p>
+            	</div>
             </div>
         </li>
+
+		<script src="js/vue.min.js"></script>
+			<script>
+				let mydata1;
+			    $(document).ready(function () {
+			      $.ajax({
+			        url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Lntroduction1",
+			        method: "post",
+			        dataType: "json",
+			        success: function (data) {
+			          if (data) {
+			            mydata1 = data.body.Listspots;
+			            new Vue({
+			              el: "#aaa",
+			              data: {
+			                mydata1: data.body.Listspots,
+			              },
+			            });
+			          }
+			        },
+			        error: function () {},
+			      });
+			    });
+			</script>
+
         <li>
             <input type="radio" name="cheg" id="catvi3"><label for="catvi3">美食</label>
-            <div class="fyspq">
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm111.jpg" />
-               		<p class="ln_clo">重庆</p>
-               		<p class="ln_wzc">格格，万州美食“三绝”之一</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm222.jpg" />
-               		<p class="ln_clo">巴库</p>
-               		<p class="ln_wzc">这个超强设计咖啡馆咖啡只卖2元？</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm333.jpg" />
-               		<p class="ln_clo">重庆</p>
-               		<p class="ln_wzc">上下城旅拍集-NO.2</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm444.jpg" />
-               		<p class="ln_clo">北京</p>
-               		<p class="ln_wzc">梦中的箭楼跟开在公共厕所门口的涮肉</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm555.jpg" />
-               		<p class="ln_clo">丽江</p>
-               		<p class="ln_wzc">关于丽江美食，丽江小吃，丽江美食</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm666.jpg" />
-               		<p class="ln_clo">福州</p>
-               		<p class="ln_wzc">福州我心里排第一的咖啡馆</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm777.jpg" />
-               		<p class="ln_clo">福州</p>
-               		<p class="ln_wzc">福州社区咖啡店</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm888.jpg" />
-               		<p class="ln_clo">福州</p>
-               		<p class="ln_wzc">福州我心里的too3咖啡馆</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm111.jpg" />
-               		<p class="ln_clo">广州</p>
-               		<p class="ln_wzc">场路日料店探店</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm555.jpg" />
-               		<p class="ln_clo">多伦多</p>
-               		<p class="ln_wzc">天井下，海的味道——Bar Reyna餐厅</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm777.jpg" />
-               		<p class="ln_clo">丹麦</p>
-               		<p class="ln_wzc">来自异国的街头美食</p>
-               	</div>
-               	<div class="lb_sp">
-               		<img src="images/strategy/gllm888.jpg" />
-               		<p class="ln_clo">丹麦</p>
-               		<p class="ln_wzc">丹麦有一间“有毒”的餐厅——Grønttovet餐厅</p>
-               	</div>
+            <div class="fyspq" id="bbb">
+            	<div class="lb_sp" v-for='b in mydata2'>
+            		<img v-bind:src="b.pic_url" />
+            		<p class="ln_clo">{{b.title}}</p>
+            		<p class="ln_wzc">{{b.price}}</p>
+            	</div>
             </div>
         </li>
+		<script src="js/vue.min.js"></script>
+			<script>
+				let mydata2;
+			    $(document).ready(function () {
+			      $.ajax({
+			        url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Lntroduction2",
+			        method: "post",
+			        dataType: "json",
+			        success: function (data) {
+			          if (data) {
+			            mydata2 = data.body.Gourmetlist;
+			            new Vue({
+			              el: "#bbb",
+			              data: {
+			                mydata2: data.body.Gourmetlist,
+			              },
+			            });
+			          }
+			        },
+			        error: function () {},
+			      });
+			    });
+			</script>
     </ul>
 </div>
 
@@ -267,50 +175,39 @@
 </div>
 <!--标题-->
 <!--攻略栏目三-->
-<div class="last_yj mid">
-	<div class="yj_box">
-		<img src="images/strategy/gllm3-1.jpg"/>
-		<p class="yjlb_top">【爱在清迈】要和他一起做的几件小事</p>
-		<p class="yjlb_bottom">这是一篇掺杂着回忆杀的游记，记录我们2016和2019两次&nbsp;清迈&nbsp;旅行。</p>
-		<a class="yjlb_left"><span>二砚与马桶</span></a>
-		<a class="yjlb_right"><span>1038人浏览</span></a>
-	</div>
-	<div class="yj_box">
-		<img src="images/strategy/gllm3-2.jpg"/>
-		<p class="yjlb_top">槟城，一隅，我在这个冬天的小欢喜</p>
-		<p class="yjlb_bottom">因为久居内陆城市，到海岛国家旅行，我常常会产生这样的疑问，是不是海岛国家的居民天然就比我们更亲近大自然，也更懂得如何向大自然索取。</p>
-		<a class="yjlb_left"><span>我是XIAO啦</span></a>
-		<a class="yjlb_right"><span>121983人浏览</span></a>
-	</div>
-	<div class="yj_box">
-		<img src="images/strategy/gllm3-3.jpg"/>
-		<p class="yjlb_top">重庆周边的亲子景点有哪些？</p>
-		<p class="yjlb_bottom">忙忙乱乱的一周过去，家长和孩子都可以好好放松一下，蹦跶中不仅可以增加宝贝的知识面，还可以拉近和宝贝们的关系。</p>
-		<a class="yjlb_left"><span>7个目的地</span></a>
-		<a class="yjlb_right"><span>3860人浏览</span></a>
-	</div>
-	<div class="yj_box">
-		<img src="images/strategy/gllm3-4.jpg"/>
-		<p class="yjlb_top">48小时的济州岛，原来可以这么玩</p>
-		<p class="yjlb_bottom">此篇游记是“曾琪琪”在途牛发表的游记攻略，记录了旅游时的游记攻略，图片多多，真实好玩。 </p>
-		<a class="yjlb_left"><span>曾琪琪</span></a>
-		<a class="yjlb_right"><span>684人浏览</span></a>
-	</div>
-	<div class="yj_box">
-		<img src="images/strategy/gllm3-5.jpg"/>
-		<p class="yjlb_top">揭秘广州八大古镇村落</p>
-		<p class="yjlb_bottom">很多时候出游不用走远，多留意留意身边，你会发现*的风景就那么巧地在你眼底下。比如，想去古镇转转，何苦大老远地跑去江南跟来自天朝各地的游客挤呢。</p>
-		<a class="yjlb_left"><span>3个目的地</span></a>
-		<a class="yjlb_right"><span>15084人浏览</span></a>
-	</div>
-	<div class="yj_box">
-		<img src="images/strategy/gllm3-6.jpg"/>
-		<p class="yjlb_top">最强70岁老头伊朗22天自由行攻略。</p>
-		<p class="yjlb_bottom">你想去古波斯帝国--伊朗自由行吗？那么参考一下最强攻略吧。伊朗对中国游客免签了。</p>
-		<a class="yjlb_left"><span>夏宁葆</span></a>
-		<a class="yjlb_right"><span>718人浏览</span></a>
+<div class="last_yj mid" id="ccc">
+	<div class="yj_box" v-for="c in mydata3">
+		<img v-bind:src="c.pic_url"/>
+		<p class="yjlb_top">{{c.title}}</p>
+		<p class="yjlb_bottom">{{c.price}}</p>
+		<a class="yjlb_left"><span>{{c.author}}</span></a>
+		<a class="yjlb_right"><span>{{c.number}}</span></a>
 	</div>
 </div>
+
+	<script src="js/vue.min.js"></script>
+	<script>
+		    let mydata3;
+		    $(document).ready(function () {
+		      $.ajax({
+		        url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Lntroduction3",
+		        method: "post",
+		        dataType: "json",
+		        success: function (data) {
+		          if (data) {
+		            mydata3 = data.body.Travellist;
+		            new Vue({
+		              el: "#ccc",
+		              data: {
+		                mydata3: data.body.Travellist,
+		              },
+		            });
+		          }
+		        },
+		        error: function () {},
+		      });
+		    });
+	</script>
 
 <div class="foot">
     <div class="foot-bottom">
