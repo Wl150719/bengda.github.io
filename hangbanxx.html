@@ -72,9 +72,9 @@
 									<div class="s-box">
 										<p>出发城市<span>到达城市</span></p>
 										<div class="box-input">
-											<input class="input-left" id="cfd" type="text" name="become" value="上海"/>
-											<img src="images/hangban/jjip-logo1.jpg" />
-										    <input class="input-right" id="dz" type="text"  value="北京"/>
+											<input class="input-left" id="cfd" type="text" name="become" value="上海" />
+											<img src="images/hangban/jjip-logo1.jpg" onclick="exchange()" />
+										    <input class="input-right" id="dz" type="text"  value="北京" "/>
 										</div>
 										<p>出发日期<span>返回日期</span></p>
 										<div class="box-input">
@@ -83,7 +83,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="s-button" onclick="start()">
+								<button class="s-button" onclick="update(),fuzzyQuery()">
 									<span>
 										搜索
 									</span>
@@ -92,18 +92,31 @@
 						</div>
 						<div class="new_center">
 							<div>
-								<a href="#" id="photo1" style="display:block;">
-									<img src="images/hangban/jip-lunbo1.jpg" style="width: 770px;height: 370px;"/>
-								</a>
-								<a href="javascript:;" id="photo2" style="display: none;">
-									<img src="images/hangban/jip-lunbo2.jpg" style="width: 770px;height: 370px;"/>
-								</a>
-								<a href="javascript:;" id="photo3" style="display: none;">
-									<img src="images/hangban/jip-lunbo3.jpg" style="width: 770px;height: 370px;"/>
-								</a>
-								<a href="javascript:;" id="photo4" style="display: none;">
-									<img src="images/hangban/jip-lunbo4.jpg" style="width: 770px;height: 370px;"/>
-								</a>
+								<ul id="fff" style="width: 800px;height: 390px;overflow: hidden;">
+									<li v-for='v in mydata' style="position: relative; padding: 10px;background-color: palegreen;margin-bottom: 5px;border-radius: 5px;">
+										<div style="font-size: 20px">{{v.airlinecompany}}</div>
+										<div style="font-size: 12px; color: blueviolet;">{{v.model}}</div>
+										<div style="position: absolute; left: 200px; top: 5px;">
+											<div style="font-size: 25px;">{{v.departuretime}}</div>
+											<div>{{v.departureAirportName}}</div>
+										</div>
+										<div><img src="./images/hangban/jiantou.jpg" alt="" style="width:60px; height: 10px; position: absolute; left: 310px;top: 15px;"></div>
+										<div style="position: absolute; left: 400px; top: 5px;">
+											<div style="font-size: 25px;">{{v.arrivaltime}}</div>
+											<div>{{v.arrivalAirportName}}</div>	
+										</div>
+
+										<div style="position: absolute;left: 520px; top: 20px; color: blueviolet;">到达准点率{{v.arrivalrate}}</div>
+										<div style="position: absolute;left: 680px;top: 5px;">
+											<p style="font-size: 15px;color: red;">￥:{{v.price}}</p>
+											<p style="margin-left: 10px;">{{v.discount}}折</p>
+										</div>
+										<div style="position: absolute;right: 5px;top: 10px;width: 50px;height: 30px;background-color:orange ;border-radius: 10px;text-align: center;line-height: 30px;">订票</div>
+									</li>
+								</ul>
+
+								<script src="js/vue.min.js"></script>
+								
 							</div>
 							<div class="banner_menu">
 								<a href="javascript:;" id="banner_menu4"></a>
@@ -176,7 +189,6 @@
 		</div>
 
 		<script>
-			//获取input元素
 			var _input = document.getElementById('cfsj');
 			//获取当前时间
 			var date = new Date();
@@ -195,56 +207,69 @@
 			//赋值给input.value
 			_input.value = currentDate;
 
-			//根据目的地显示航班信息图
-			function start(){
-					// console.log('点击成功');
-					var photo1 = document.getElementById("photo1");
-					var photo2 = document.getElementById("photo2");
-					var photo3 = document.getElementById("photo3");
-					var photo4 = document.getElementById("photo4");
-					var cfd = document.getElementById('cfd').value;
-					var dz = document.getElementById('dz').value;
-					console.log(dz);
-						if(dz == '北京'){
-							photo1.style.display="block";
-							photo2.style.display="none";
-							photo3.style.display="none";
-							photo4.style.display="none";
-							// console.log('北京成功');
-							return;
-						}
-						if(dz == '长沙'){
-							photo2.style.display="block";
-							photo1.style.display="none";
-							photo3.style.display="none";
-							photo4.style.display="none";
-							// console.log('长沙成功');
-							return;
-						}
-						if(dz == '西安'){
-							photo3.style.display="block";
-							photo2.style.display="none";
-							photo1.style.display="none";
-							photo4.style.display="none";
-							// console.log('西安成功');
-							return;
-						}
-						if(dz == '成都'){
-							photo4.style.display="block";
-							photo2.style.display="none";
-							photo3.style.display="none";
-							photo1.style.display="none";
-							// console.log('成都成功');
-							return;
-						}
-						if(dz == cfd){
-							alert('出发城市不能和到达城市相同！！');
-							return;
-						}
-						if(dz != '北京' && dz != '成都' && dz != '西安' && dz != '长沙'){
-							alert("还未开通，我们会尽快完善");
-						}
+			let mydata,savedata;
+			$(document).ready(function () {
+			  $.ajax({
+			     url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Flightinformation",
+			     method: "post",
+			     dataType: "json",
+			     success: function (data) {
+			      if (data) {
+			        mydata = data.body.flightlist;
+			        new Vue({
+			           el: "#fff",
+			           data: {
+			             mydata: data.body.flightlist,
+			           },
+			         });
+			       }
+			    },
+			    error: function () {},
+			  });
+			});
+
+			$(document).ready(function () {
+				$.ajax({
+				url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Flightinformation",
+				method: "post",
+				dataType: "json",
+				success: function (data) {
+					if (data) {
+					savedata = data.body.flightlist;
+					}
+				},
+				error: function () {},
+				});
+			});
+
+			//出发地到达地交换
+			function exchange(){
+				var keyWord = document.getElementById('dz').value;
+				var keyWord1 = document.getElementById('cfd').value;
+				
+				document.getElementById('dz').value=keyWord1;
+				document.getElementById('cfd').value=keyWord;
 			}
+
+			//搜索
+			function fuzzyQuery() {
+				var keyWord = $("#dz").val();
+				var keyWord1 = $("#cfd").val();
+				var arr = [];
+				for (var i = 0; i < mydata.length; i++) {
+					if (mydata[i].cf.indexOf(keyWord1) >= 0) {//过滤出发地
+						if (mydata[i].dd.indexOf(keyWord) >= 0) {//过滤到达地
+						arr.push(mydata[i]);
+						}
+					}
+				}
+				mydata.splice(0, mydata.length, ...arr);
+			}
+			//重置数据
+			function update() {
+				mydata.splice(0, mydata.length, ...savedata);
+			}
+			
 		</script>
 		
 </body>
