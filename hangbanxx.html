@@ -83,7 +83,7 @@
 										</div>
 									</div>	
 								</div>
-								<button class="s-button" onclick="update(),fuzzyQuery()">
+								<button class="s-button" onclick="update(),fuzzyQuery(),judgeTime()">
 									<span>
 										搜索
 									</span>
@@ -207,6 +207,19 @@
 			//赋值给input.value
 			_input.value = currentDate;
 
+			//比较两个时间的大小
+			function judgeTime(time){
+				//输入时间
+				var date1 = _input.value;
+				//现在时间
+				var date2 = currentDate;
+				//判断输入时间是否晚于当前时间
+				if(date1 < date2){
+					alert("出发时间晚于当前时间!!");
+					_input.value = currentDate;
+				}
+			}
+
 			//获得焦点时 type类型为date
 			function datefocus(){
 				var right=document.getElementById("fanhui");
@@ -243,7 +256,8 @@
 			    error: function () {},
 			  });
 			});
-
+			
+			//定义重新搜索后的页面数据 savedata
 			$(document).ready(function () {
 				$.ajax({
 				url: "https://www.fastmock.site/mock/b10a4ba221b5816b9c9de514e6f21bd5/bengda/Flightinformation",
