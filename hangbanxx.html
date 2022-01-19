@@ -78,10 +78,10 @@
 										</div>
 										<p>出发日期<span>返回日期</span></p>
 										<div class="box-input">
-											<input class="input-left" id="cfsj" type="date" name="become"  value="年/月/日"/>	
-										    <input class="input-right" type="text" name="over" value="返回日期" />
+											<input class="input-left" id="cfsj" type="date" name="become" />	
+										    <input class="input-right" id="fanhui" type="text" name="over" placeholder="返回日期" onfocus="datefocus()" onblur="dateblur() "/>
 										</div>
-									</div>
+									</div>	
 								</div>
 								<button class="s-button" onclick="update(),fuzzyQuery()">
 									<span>
@@ -206,6 +206,22 @@
 			var currentDate = year + seperator + month + seperator + strDate; 
 			//赋值给input.value
 			_input.value = currentDate;
+
+			//获得焦点时 type类型为date
+			function datefocus(){
+				var right=document.getElementById("fanhui");
+					right.type = 'date';
+					right.placeholder ='';
+			}
+			
+			//当input value为空时type改回text
+			function dateblur(){
+				var right=document.getElementById("fanhui");
+				if(right.value == ''){
+					right.type = 'text';
+					right.placeholder ='返回日期';
+				}
+			}
 
 			let mydata,savedata;
 			$(document).ready(function () {
